@@ -26,6 +26,9 @@ pipeline {
              steps {
                  echo 'Hello World Download'
 
+                 def rootDir = pwd()
+                 println("Current Directory: " + rootDir)
+
                  script {
                      scripts=load "test.groovy"
                  }
