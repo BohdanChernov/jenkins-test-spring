@@ -26,9 +26,6 @@ pipeline {
              steps {
                  echo 'Hello World Download'
 
-                 def workspace = pwd()
-                 echo workspace
-
                  script {
                      scripts=load "test.groovy"
                  }
