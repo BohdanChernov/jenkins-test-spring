@@ -26,21 +26,14 @@ pipeline {
              steps {
                  echo 'Hello World Download'
 
+                 def workspace = pwd()
+                 echo workspace
+
                  script {
-                     scripts=load "DownloadFilesFromDataBase.groovy"
+                     scripts=load "test.groovy"
                  }
 
-
-//                 modules.first = load "DownloadFilesFromDataBase.groovy"
-
-
-
                  echo 'Hello World Download Finish'
-
-//                 modules.second = load "second.groovy"
-//                 modules.second.init(modules.first)
-//                 modules.first.test1()
-//                 modules.second.test2()
              }
         }
     }
