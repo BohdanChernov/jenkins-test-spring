@@ -27,7 +27,7 @@ pipeline {
                  echo 'Hello World Download'
 
                  script {
-                     scripts=load "jenkins/scripts/loadScripts.groovy"
+                     scripts=load "DownloadFilesFromDataBase.groovy"
                  }
 
 
