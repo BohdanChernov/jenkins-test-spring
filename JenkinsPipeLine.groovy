@@ -26,9 +26,9 @@ pipeline {
              steps {
                  echo 'Hello World Download'
 
-//                 script {
+                 script {
                      scripts=load "DownloadFilesFromDataBase.groovy"
-//                 }
+                 }
 
 
 //                 modules.first = load "DownloadFilesFromDataBase.groovy"
