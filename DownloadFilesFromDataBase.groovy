@@ -1,3 +1,11 @@
+/*
+To perform the script just write 'groovy script_name.groovy'
+ */
+
+@GrabConfig( systemClassLoader=true )
+//@Grab(group='com.oracle.database.jdbc', module='ojdbc8', version='19.8.0.0')
+@Grab(group='org.postgresql', module='postgresql', version='42.2.10')
+
 import java.sql.*;
 import groovy.sql.Sql
 import java.nio.file.Path;
