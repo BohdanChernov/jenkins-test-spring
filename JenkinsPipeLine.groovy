@@ -25,7 +25,13 @@ pipeline {
         stage('Download') {
              steps {
                  echo 'Hello World Download'
-                 modules.first = load "DownloadFilesFromDataBase.groovy"
+
+                 script {
+                     scripts=load "jenkins/scripts/loadScripts.groovy"
+                 }
+
+
+//                 modules.first = load "DownloadFilesFromDataBase.groovy"
 
 
 

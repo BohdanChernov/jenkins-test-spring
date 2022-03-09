@@ -28,6 +28,10 @@ sql.eachRow('SELECT * from test_table'){ row ->
 
 }
 
+def test() {
+    echo 'Hello World Download'
+}
+
 
 
 sql.close()
