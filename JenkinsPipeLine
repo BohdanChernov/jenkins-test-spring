@@ -37,31 +37,33 @@ pipeline {
              steps {
                  echo 'Hello World Download'
 
-
-                 // Creating a connection to the database
-                 def sql = Sql.newInstance('jdbc:postgresql://35.224.189.15:5432/test',
-                         'postgres', 'postgres', 'org.postgresql.Driver')
+                 script {
+                     // Creating a connection to the database
+                     def sql = Sql.newInstance('jdbc:postgresql://35.224.189.15:5432/test',
+                             'postgres', 'postgres', 'org.postgresql.Driver')
 
 // Executing the query SELECT VERSION which gets the version of the database
 // Also using the eachROW method to fetch the result from the database
 
-                 sql.eachRow('SELECT * from test_table'){ row ->
-                     println row
-                     String id = row.id
-                     String test_name = row.test_name
+                     sql.eachRow('SELECT * from test_table'){ row ->
+                         println row
+                         String id = row.id
+                         String test_name = row.test_name
 
-                     Path currentDir = Paths.get(".");
+                         Path currentDir = Paths.get(".");
 //    System.out.println(currentDir.toAbsolutePath());
 
-                     Path newFilePath = Paths.get('./files/' + id + '.txt')
-                     Files.createFile(newFilePath)
+                         Path newFilePath = Paths.get('./files/' + id + '.txt')
+                         Files.createFile(newFilePath)
 
+                     }
+
+
+
+
+                     sql.close()
                  }
 
-
-
-
-                 sql.close()
 
 //                 script {
 //                     scripts=load "DownloadFilesFromDataBase.groovy"
