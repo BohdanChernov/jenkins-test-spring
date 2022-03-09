@@ -1,1 +1,1 @@
-echo 'test_script'
+println 'test_script'
