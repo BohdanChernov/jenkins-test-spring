@@ -24,7 +24,17 @@ pipeline {
         }
         stage('Download') {
              steps {
-                  echo 'Hello World Download'
+                 echo 'Hello World Download'
+                 modules.first = load "DownloadFilesFromDataBase.groovy"
+
+
+
+                 echo 'Hello World Download Finish'
+
+//                 modules.second = load "second.groovy"
+//                 modules.second.init(modules.first)
+//                 modules.first.test1()
+//                 modules.second.test2()
              }
         }
     }
