@@ -3,6 +3,7 @@ To perform the script just write 'groovy script_name.groovy'
  */
 
 @GrabConfig( systemClassLoader=true )
+@GrabResolver(name="my-repo", root="/lib")
 //@Grab(group='com.oracle.database.jdbc', module='ojdbc8', version='19.8.0.0')
 @Grab(group='org.postgresql', module='postgresql', version='42.2.10')
 
